@@ -1,12 +1,11 @@
 from functions import *
 
-print("Please enter the rows of the sudoku. Use zero (0) for empty fields. Use space as a delimiter.")
+print("Please enter the rows of the sudoku. Use zero (0) for empty fields. No spaces.")
 
 sudoku = list(range(9))
 for i in range(9):
-    sudoku[i] = input("row " + str(i + 1) + ": ").split()
-    for idx, val in enumerate(sudoku[i]):
-        sudoku[i][idx] = int(sudoku[i][idx])
+    inp = input("row " + str(i + 1) + ": ")
+    sudoku[i] = list(map(int, list(inp)))
 
 print("\nCalculating...\n")
 
